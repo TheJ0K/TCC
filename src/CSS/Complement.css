@@ -1,0 +1,164 @@
+/*Cores
+Azul: #03254E
+Preto: #04080F
+Branco: #EFF1F3
+Vermelho: #C20114
+Lazuli: #1C5D99
+
+*/
+.backgroundBlue{/*Fundo azul (#03254E) e preto (#04080F)*/
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #03254E 0%, #04080F 100%);
+}
+.backgroundLazuli{
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #1C5D99 0%, #04080F 100%);
+}
+.btAreaWhite{
+    -fx-background-color: #EFF1F3;/*Branco*/
+    -fx-border-color: #EFF1F3;/*Branco*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+}
+.btTitledWhite{
+    -fx-background-color: #EFF1F3;/*Branco*/
+    -fx-border-color: #EFF1F3;/*Branco*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #03254E;/*Azul*/
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-radius: 0;
+    -fx-border-insets: 0;
+}
+.bt{
+    -fx-cursor: hand;
+}
+.btBlue1{/*Botão em forma inicial*/
+    -fx-cursor: hand;
+    -fx-background-color: #EFF1F3;/*Branco*/
+    -fx-border-color: #03254E;/*Azul*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #03254E;/*Azul*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+}
+.btBlue2:hover{/*Botão quando mouse por cima*/
+    -fx-background-color: #03254E;/*Azul*/
+    -fx-border-color: #03254E;/*Azul*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #EFF1F3;/*Branco*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+.btWhite1{/*Botão em forma inicial*/
+    -fx-cursor: hand;
+    -fx-background-color: transparent;/*Transparent*/
+    -fx-border-color: #EFF1F3;/*Branco*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #EFF1F3;/*Branco*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+}
+.btWhite2:hover{/*Botão quando mouse por cima*/
+    -fx-background-color: #EFF1F3;/*Branco*/
+    -fx-border-color: #EFF1F3;/*Branco*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #03254E;/*Azul*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+.btRed1{/*Botão em forma inicial*/
+    -fx-cursor: hand;
+    -fx-background-color: #EFF1F3;/*Branco*/
+    -fx-border-color: #C20114;/*Vermelho*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #C20114;/*Vermelho*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;    
+}
+.btRed2:hover{/*Botão em forma inicial*/
+    -fx-background-color: #C20114;/*Vermelho*/
+    -fx-border-color: #C20114;/*Vermelho*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #EFF1F3;/*Branco*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;    
+}
+.labTextWhite{/*Label BRANCA de titulo*/
+    -fx-font: italic 25px "Times New Roman";
+    -fx-text-fill: #EFF1F3;/*Branco*/
+}
+.labTextBlue{/*Label AZUL de titulo*/
+    -fx-font: italic 25px "Times New Roman";
+    -fx-text-fill: #03254E;/*Azul*/
+}
+.labTextBlue2{/*Label BLUE de titulo*/
+    -fx-font: italic 40px "Times New Roman";
+    -fx-text-fill: #03254E;/*Azul*/
+}
+.labTextBlue3{
+    -fx-font: 20px "Times New Roman";
+    -fx-text-fill: #03254E;/*Azul*/
+}
+.labTextLazuli{
+    -fx-font: italic 30px "Times New Roman";
+    -fx-text-fill: #1C5D99;/*Lazuli*/
+}
+.labTextLazuli2{
+    -fx-font: italic 40px "Times New Roman";
+    -fx-background-color: #1C5D99;
+    -fx-text-fill: #D7D7D7;/*Cinza*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+}
+.menubarWhite{/*Aplicações MenuBar cores, tamanho*/
+    -fx-background-color: #EFF1F3;/*Branco*/
+    -fx-border-color: #EFF1F3;/*Branco*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #03254E;/*Blue*/
+}
+.menubuttonA1:hover{
+    -fx-text-fill: #03254E;/*Azul*/
+    -fx-text-fill: #EFF1F3;/*Branco*/
+
+}
+.menubuttonA2:hover{
+    -fx-background-color: #03254E;/*Azul*/
+    -fx-text-fill: #EFF1F3;/*Branco*/
+}
+.datepickerWhite{
+    -fx-background-color: #EFF1F3;/*Branco*/
+    -fx-border-color: #EFF1F3;/*Branco*/
+    -fx-font: italic 12px "Times New Roman";
+    -fx-text-fill: #03254E;/*Azul*/
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-border-radius: 5;
+    -fx-border-insets: 0;
+}
+.imageFoto:hover{/*IMAGEM quando mouse por cima*/
+    -fx-cursor: hand;
+    -fx-scale-x: 1.15;
+    -fx-scale-y: 1.15;
+    -fx-border-collor: red;/*Lazuli*/
+}

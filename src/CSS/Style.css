@@ -1,0 +1,99 @@
+/*Cores
+Tom de Preto: #04080F
+Roxo: #370031
+Branco: #EFF1F3
+Tom de Cinza: #D7D7D7
+*/
+.anchorcolor{/*Borda do anchorpane em tom preto (#04080F)*/
+    -fx-border-color: #04080F;
+}
+.backgroundPurple{/*Fundo roxo (#370031) e tom preto (#04080F)*/
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #370031 0%, #04080F 100%);
+}
+.backgroundWhite{/*Fundo Branco (#EFF1F3)*/
+    -fx-background-color: #EFF1F3;/*Branco*/
+}
+.backgroundBlack{
+    -fx-background-color: #D7D7D7;/*Tom de Cinza*/
+}
+.formicon{/*Forma do circulo para logo*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+}
+.tollbar{/*TollBar para imagens*/
+    -fx-background-color: #EFF1F3;/*Branco*/
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-border-radius: 5;
+    -fx-border-insets: 0;
+}
+.btA1{/*Botão em forma inicial*/
+    -fx-cursor: hand;
+    -fx-background-color: #EFF1F3;/*Branco*/
+    -fx-border-color: #370031;/*Roxo*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #370031;/*Roxo*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+}
+.btA2:hover{/*Botão quando mouse por cima*/
+    -fx-background-color: #370031;/*Roxo*/
+    -fx-border-color: #370031;/*Roxo*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #EFF1F3;/*Branco*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+.btB1{/*Segundo botão em forma inicial*/
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-border-color: #EFF1F3;/*Branco*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #EFF1F3;/*Branco*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+}
+.btB2:hover{/*Segundo botão quando mouse por cima*/
+    -fx-background-color: #EFF1F3;/*Branco*/
+    -fx-border-color: #EFF1F3;/*Branco*/
+    -fx-font: bold 12px "Times New Roman";
+    -fx-text-fill: #370031;/*Roxo*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+.labtext1{/*Label BRANCA de titulo para imagens*/
+    -fx-font: italic 25px "Times New Roman";
+    -fx-text-fill: #EFF1F3;/*Branco*/
+}
+.labtext2{/*Label ROXA de titulo para logo*/
+    -fx-font: italic 25px "Times New Roman";
+    -fx-text-fill: #370031;/*Roxo*/
+}
+.areaA1{/*Area de senha para LOGIN*/
+    -fx-background-color: #EFF1F3;/*Branco*/ 
+    -fx-border-color: #EFF1F3;/*Branco*/
+    -fx-text-fill: #04080F;/*Tom de preto*/
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0;
+}
+imageFoto:hover{/*IMAGEM quando mouse por cima*/
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-border-collor: black;
+}
