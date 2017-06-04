@@ -5,9 +5,13 @@
  */
 package Controller;
 
+import Main.MInitial;
+import Main.MLogin;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 
 
 
@@ -17,14 +21,25 @@ import javafx.fxml.Initializable;
  * @author Diogo Fistarol
  */
 public class InitialController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
+    
+    @FXML
+    void login(){
+        MLogin login = new MLogin();
+        try {
+            login.start(new Stage());
+            close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
  
-    }    
+    }
+    
+    void close(){
+        MInitial.getStage().close();
+    }
     
 }

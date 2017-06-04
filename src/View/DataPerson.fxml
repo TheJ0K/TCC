@@ -84,7 +84,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="backgroundLazuli">
                <children>
-                  <Button layoutX="162.0" layoutY="26.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="BACK">
+                  <Button layoutX="162.0" layoutY="26.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="101.0" text="BACK">
                      <styleClass>
                         <String fx:value="btWhite1" />
                         <String fx:value="btWhite2" />
@@ -103,13 +103,13 @@
                         <String fx:value="btWhite2" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="364.0" layoutY="26.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="EDIT">
+                  <Button layoutX="364.0" layoutY="26.0" mnemonicParsing="false" onAction="#editdev" prefHeight="33.0" prefWidth="101.0" text="EDIT">
                      <styleClass>
                         <String fx:value="btWhite1" />
                         <String fx:value="btWhite2" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="566.0" layoutY="26.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="INSERT">
+                  <Button layoutX="566.0" layoutY="26.0" mnemonicParsing="false" onAction="#insdev" prefHeight="33.0" prefWidth="101.0" text="INSERT">
                      <styleClass>
                         <String fx:value="btWhite1" />
                         <String fx:value="btWhite2" />

@@ -66,7 +66,7 @@
       </Pane>
       <Pane layoutX="215.0" layoutY="108.0" prefHeight="181.0" prefWidth="223.0" styleClass="btAreaWhite">
          <children>
-            <Button layoutX="23.0" layoutY="115.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="190.0" text="DATA PERSON">
+            <Button layoutX="23.0" layoutY="115.0" mnemonicParsing="false" onAction="#ddeve" prefHeight="33.0" prefWidth="190.0" text="DATA PERSON">
                <styleClass>
                   <String fx:value="btBlue1" />
                   <String fx:value="btBlue2" />
@@ -75,7 +75,7 @@
                   <InnerShadow />
                </effect>
             </Button>
-            <Button layoutX="24.0" layoutY="58.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="190.0" text="DATA COMPANY">
+            <Button layoutX="24.0" layoutY="58.0" mnemonicParsing="false" onAction="#dcomp" prefHeight="33.0" prefWidth="190.0" text="DATA COMPANY">
                <styleClass>
                   <String fx:value="btBlue1" />
                   <String fx:value="btBlue2" />
@@ -106,7 +106,7 @@
       </Pane>
       <Pane layoutX="8.0" layoutY="49.0" prefHeight="241.0" prefWidth="223.0" styleClass="btAreaWhite">
          <children>
-            <Button layoutX="12.0" layoutY="58.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="199.0" text="GRAPHIC COMPANY">
+            <Button layoutX="12.0" layoutY="58.0" mnemonicParsing="false" onAction="#gcomp" prefHeight="33.0" prefWidth="199.0" text="GRAPHIC COMPANY">
                <styleClass>
                   <String fx:value="btBlue1" />
                   <String fx:value="btBlue2" />
@@ -115,7 +115,7 @@
                   <InnerShadow />
                </effect>
             </Button>
-            <Button layoutX="12.0" layoutY="116.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="199.0" text="GRAPHIC PERSON">
+            <Button layoutX="12.0" layoutY="116.0" mnemonicParsing="false" onAction="#gdeve" prefHeight="33.0" prefWidth="199.0" text="GRAPHIC PERSON">
                <styleClass>
                   <String fx:value="btBlue1" />
                   <String fx:value="btBlue2" />
@@ -128,7 +128,7 @@
                <effect>
                   <InnerShadow />
                </effect></Label>
-            <Button layoutX="12.0" layoutY="174.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="199.0" text="GRAPHIC COMPANY-PERSON">
+            <Button layoutX="12.0" layoutY="174.0" mnemonicParsing="false" onAction="#gdevcom" prefHeight="33.0" prefWidth="199.0" text="GRAPHIC COMPANY-PERSON">
                <styleClass>
                   <String fx:value="btBlue1" />
                   <String fx:value="btBlue2" />
@@ -154,7 +154,7 @@
          </effect>
       </Pane>
       <Separator layoutX="40.0" layoutY="325.0" prefHeight="1.0" prefWidth="521.0" />
-      <Button layoutX="40.0" layoutY="350.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="BACK">
+      <Button layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="101.0" text="BACK">
          <styleClass>
             <String fx:value="btWhite1" />
             <String fx:value="btWhite2" />

@@ -93,7 +93,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="backgroundWhite">
                <children>
-                  <Button layoutX="41.0" layoutY="277.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="93.0" text="LOGIN">
+                  <Button layoutX="41.0" layoutY="277.0" mnemonicParsing="false" onAction="#login" prefHeight="33.0" prefWidth="93.0" text="LOGIN">
                      <styleClass>
                         <String fx:value="btA1" />
                         <String fx:value="btA2" />

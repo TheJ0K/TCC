@@ -5,9 +5,13 @@
  */
 package Controller;
 
+import Main.MGraphicCompanyPerson;
+import Main.MMain;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -15,10 +19,23 @@ import javafx.fxml.Initializable;
  * @author Diogo Fistarol
  */
 public class GraphicCompanyPersonController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
+    
+    @FXML
+    void back() {
+        MMain main = new MMain();
+        try {
+            main.start(new Stage());
+            close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @FXML
+    void close(){
+        MGraphicCompanyPerson.getStage().close();
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

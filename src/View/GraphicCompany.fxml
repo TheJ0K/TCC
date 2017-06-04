@@ -25,7 +25,7 @@
             <InnerShadow />
          </effect>
       </Pane>
-      <Button layoutX="115.0" layoutY="358.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="BACK" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="384.0" AnchorPane.topAnchor="358.0">
+      <Button layoutX="115.0" layoutY="358.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="101.0" text="BACK" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="384.0" AnchorPane.topAnchor="358.0">
          <styleClass>
             <String fx:value="btWhite1" />
             <String fx:value="btWhite2" />

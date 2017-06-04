@@ -31,6 +31,7 @@ public class MInitial extends Application {
         stage.setTitle("Initial");
         stage.setScene(scene);
         stage.show();
+        
         setStage(stage);
     }
     public static void main(String[] args) {

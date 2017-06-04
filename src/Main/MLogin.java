@@ -29,8 +29,10 @@ public class MLogin extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Login");
+        
         stage.setScene(scene);
         stage.show();
+        
         setStage(stage);
     }
     public static void main(String[] args) {
