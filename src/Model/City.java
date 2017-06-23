@@ -20,8 +20,10 @@ public class City {
     int idCity;
     String nameCity;
 
-    /*@OneToOne
-    private State state;*/
+    @OneToOne(mappedBy = "city", fetch = FetchType.EAGER)
+    @JoinColumn(name = "idstate")
+    private State state;
+
     public String getNameCity() {
         return nameCity;
     }

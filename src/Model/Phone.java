@@ -5,9 +5,10 @@
  */
 package Model;
 
+import java.util.List;
 import javax.persistence.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
+
+
 
 /**
  *
@@ -21,9 +22,21 @@ public class Phone {
     @GeneratedValue
     int idPhone;
     int landLine, mobile;
-
+    
     @OneToOne
+    @JoinColumn(name="idpessoa")
     private LegalPerson legalPerson;
+    @OneToMany(mappedBy = "phone")
+    private List<LegalPerson> legalPersons;
+
+    public LegalPerson getLegalPerson() {
+        return legalPerson;
+    }
+
+    public void setLegalPerson(LegalPerson legalPerson) {
+        this.legalPerson = legalPerson;
+    }
+    
 
     public Phone() {
     }

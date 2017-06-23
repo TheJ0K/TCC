@@ -5,13 +5,7 @@
  */
 package Controller;
 
-import ConnectionFactory.HibernateUtil;
-import DAO.CityDAO;
-import DAO.CompanyDAO;
-import DAO.LegalPersonDAO;
-import DAO.PhoneDAO;
-import DAO.PhotoDAO;
-import DAO.StateDAO;
+import DAL.DAL;
 import Model.City;
 import Model.Company;
 import Model.LegalPerson;
@@ -19,8 +13,6 @@ import Model.Phone;
 import Model.Photo;
 import Model.State;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -52,12 +44,7 @@ public class InsertCompanyController implements Initializable {
 
     @FXML
     void insert() {
-        CityDAO c = new CityDAO();
-        CompanyDAO cd = new CompanyDAO();
-        PhoneDAO pd = new PhoneDAO();
-        LegalPersonDAO lp = new LegalPersonDAO();
-        PhotoDAO p = new PhotoDAO();
-        StateDAO s = new StateDAO();
+        DAL dal = new DAL();
 
         Company comp = new Company();
         Phone phone = new Phone();
@@ -74,6 +61,7 @@ public class InsertCompanyController implements Initializable {
 
         city.setNameCity(cbCity.getValue().toString());
         state.setNameState(cbState.getValue().toString());
+        state.setCity(city);
 
         legal.setName(tfName.getText());
         legal.setLastName(tfLastname.getText());
@@ -81,19 +69,21 @@ public class InsertCompanyController implements Initializable {
         legal.setDescription(taDescription.getText());
         legal.setEmail(tfEmail.getText());
 
+        legal.setPhone(phone);
+        legal.setPhoto(photo);
+        
         comp.setNameCompany(tfCompany.getText());
         comp.setCnpj(Integer.valueOf(tfCnpj.getText()));
+        
+        dal.add(legal);
 
-        lp.addLegal(legal);
-        
-        
         comp.setLegalPerson(legal);
 
-        cd.addCompany(comp);
-        pd.addPhone(phone);
-        p.addPhoto(photo);
-        c.addCity(city);
-        s.addState(state);
+        dal.add(comp);
+        dal.add(phone);
+        dal.add(photo);
+        dal.add(state);
+        dal.add(city);
     }
 
     @Override

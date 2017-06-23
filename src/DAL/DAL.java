@@ -1,4 +1,4 @@
-package DAO;
+package DAL;
 
 import ConnectionFactory.HibernateUtil;
 import Model.City;
@@ -86,6 +86,7 @@ public class DAL<G> {
     private void closeConnection() {
         if (session.isOpen()) {
             session.close();
+            sf.close();
         }
     }
 

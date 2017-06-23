@@ -5,15 +5,7 @@
  */
 package Model;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
+import javax.persistence.*;
 
 /**
  *
@@ -28,12 +20,19 @@ public class State {
     int idState;
     String nameState;
 
-    /*@OneToOne
+    @OneToOne
     @JoinColumn(name="idCity")
-    private City city;*/
+    private City city;
 
- /*@OneToOne
-    private LegalPerson legaPerson;*/
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    
     public int getIdState() {
         return idState;
     }

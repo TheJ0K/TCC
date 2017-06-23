@@ -6,8 +6,6 @@
 package Model;
 
 import javax.persistence.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 /**
  *
@@ -22,8 +20,19 @@ public class Photo {
     int idPhoto;
     String face, cover;
 
-    /*@OneToOne
-    private LegalPerson localPerson;*/
+    @OneToOne
+    @JoinTable(name = "legalPerson")
+    @JoinColumn(name = "idpessoa")
+    private LegalPerson legalPerson;
+
+    public LegalPerson getLegalPerson() {
+        return legalPerson;
+    }
+
+    public void setLegalPerson(LegalPerson legalPerson) {
+        this.legalPerson = legalPerson;
+    }
+
     public Photo() {
     }
 

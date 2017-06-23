@@ -13,16 +13,16 @@ import javax.persistence.*;
  * @author tiago
  */
 @MappedSuperclass
-public class Person implements Serializable{
+public class Person implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "id_pessoa")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idPessoa;
     private String name, lastName, email, password, description;
 
-    /*@OneToOne(mappedBy = "legalPerson"/*, fetch = FetchType.EAGER)
-    @JoinColumn(name = "legalPerson")
-    private Phone phone;
+    public Photo photo;
+    public Phone phone;
 
     public Phone getPhone() {
         return phone;
@@ -30,7 +30,16 @@ public class Person implements Serializable{
 
     public void setPhone(Phone phone) {
         this.phone = phone;
-    }*/
+    }
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
+    }
+
     public Person() {
     }
 
@@ -89,5 +98,5 @@ public class Person implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
 }

@@ -15,35 +15,37 @@ import javax.persistence.*;
 @Table
 public class LegalPerson extends Person {
 
+    @Override
+    @SequenceGenerator(name = "id_legalperson")
+    public int getIdPessoa() {
+        return super.getIdPessoa();
+    }
+
     @OneToOne(mappedBy = "legalPerson", fetch = FetchType.EAGER)
-    @JoinColumn(name = "idPhone")
-    private Phone phone;
+    @JoinColumn(name = "idphone")
+    @Override
+    public Phone getPhone() {
+        return phone;
+    }
+    
+
+    @OneToOne(mappedBy = "legalPerson", fetch = FetchType.EAGER)
+    @JoinColumn(name = "idphoto")
+    @Override
+    public Photo getPhoto() {
+        return super.getPhoto();
+    }
+    
+    private Company company;
 
     @OneToOne(mappedBy = "legalPerson", fetch = FetchType.EAGER)
     @JoinColumn(name = "idcompany")
-    private Company company;
-
     public Company getCompany() {
         return company;
     }
 
     public void setCompany(Company company) {
         this.company = company;
-    }
-
-    /*@OneToOne(mappedBy = "legalPerson", fetch = FetchType.EAGER)
-    @JoinColumn(name = "legalPerson")
-    private Photo photo;
-
-    @OneToOne(mappedBy = "legalPerson", fetch = FetchType.EAGER)
-    @JoinColumn(name = "legalPerson")
-    private State state;*/
-    public Phone getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Phone phone) {
-        this.phone = phone;
     }
 
     public LegalPerson() {
