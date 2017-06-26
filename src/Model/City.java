@@ -16,7 +16,8 @@ import javax.persistence.*;
 public class City {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
     int idCity;
     String nameCity;
 

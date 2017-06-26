@@ -17,23 +17,17 @@ import javax.persistence.*;
 public class Company implements Serializable {
 
     @Id
-    @GeneratedValue
-    private int idCompany;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
+    private Long idCompany;
     private String nameCompany;
-    private int cnpj;
+    private Long cnpj;
 
     @OneToOne
-    @JoinColumn(name = "idpessoa")
+    @JoinColumn(name = "idlegal")
     private LegalPerson legalPerson;
 
     public Company() {
-    }
-
-    public Company(int idCompany, String nameCompany, int cnpj, LegalPerson legalPerson) {
-        this.idCompany = idCompany;
-        this.nameCompany = nameCompany;
-        this.cnpj = cnpj;
-        this.legalPerson = legalPerson;
     }
 
     public LegalPerson getLegalPerson() {
@@ -44,14 +38,6 @@ public class Company implements Serializable {
         this.legalPerson = legalPerson;
     }
 
-    public int getIdCompany() {
-        return idCompany;
-    }
-
-    public void setIdCompany(int idCompany) {
-        this.idCompany = idCompany;
-    }
-
     public String getNameCompany() {
         return nameCompany;
     }
@@ -60,11 +46,20 @@ public class Company implements Serializable {
         this.nameCompany = nameCompany;
     }
 
-    public int getCnpj() {
+    public Long getIdCompany() {
+        return idCompany;
+    }
+
+    public void setIdCompany(Long idCompany) {
+        this.idCompany = idCompany;
+    }
+
+    public Long getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(Long cnpj) {
         this.cnpj = cnpj;
     }
+
 }

@@ -8,54 +8,54 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="458.0" prefWidth="670.0" styleClass="backgroundLazuli" stylesheets="@../CSS/Complement.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InsertPersonController">
-   <children>
-      <Pane layoutX="14.0" layoutY="5.0" prefHeight="448.0" prefWidth="323.0" styleClass="btAreaWhite">
-         <children>
-            <TextField layoutX="111.0" layoutY="82.0" prefHeight="25.0" prefWidth="198.0" />
-            <TextField layoutX="111.0" layoutY="153.0" prefHeight="25.0" prefWidth="198.0" />
-            <TextField layoutX="111.0" layoutY="223.0" prefHeight="25.0" prefWidth="198.0" />
-            <TextField layoutX="111.0" layoutY="328.0" prefHeight="25.0" prefWidth="198.0" />
-            <Label layoutX="48.0" layoutY="83.0" styleClass="labTextBlue3" text="Name:" />
-            <Label layoutX="18.0" layoutY="119.0" styleClass="labTextBlue3" text="Lastname:" />
-            <Label layoutX="62.0" layoutY="154.0" styleClass="labTextBlue3" text="Age:" />
-            <Label layoutX="48.0" layoutY="224.0" styleClass="labTextBlue3" text="Email:" />
-            <Label layoutX="19.0" layoutY="259.0" styleClass="labTextBlue3" text="LandLine:" />
-            <Label layoutX="60.0" layoutY="329.0" styleClass="labTextBlue3" text="CPF:" />
-            <Label alignment="CENTER" layoutX="32.0" layoutY="9.0" prefHeight="50.0" prefWidth="261.0" styleClass="labTextLazuli2" text="Insert Person" />
-            <Label layoutX="58.0" layoutY="364.0" styleClass="labTextBlue3" text="Face:" />
-            <TextField layoutX="111.0" layoutY="363.0" prefHeight="25.0" prefWidth="198.0" />
-            <Separator layoutX="15.0" layoutY="69.0" prefHeight="4.0" prefWidth="294.0" />
-            <Separator layoutX="15.0" layoutY="433.0" prefHeight="4.0" prefWidth="294.0" />
-            <Label layoutX="18.0" layoutY="189.0" styleClass="labTextBlue3" text="Password:" />
-            <TextField layoutX="111.0" layoutY="188.0" prefHeight="25.0" prefWidth="198.0" />
-            <Button layoutX="285.0" layoutY="363.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" text="..." />
-            <Label layoutX="38.0" layoutY="294.0" styleClass="labTextBlue3" text="Mobile:" />
-            <TextField layoutX="111.0" layoutY="258.0" prefHeight="25.0" prefWidth="198.0" />
-            <TextField layoutX="111.0" layoutY="293.0" prefHeight="25.0" prefWidth="198.0" />
-            <TextField layoutX="111.0" layoutY="398.0" prefHeight="25.0" prefWidth="198.0" />
-            <Label layoutX="47.0" layoutY="399.0" styleClass="labTextBlue3" text="Cover:" />
-            <Button layoutX="285.0" layoutY="398.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" text="..." />
-            <DatePicker layoutX="111.0" layoutY="118.0" opacity="0.92" prefHeight="25.0" prefWidth="198.0" />
-         </children>
-      </Pane>
-      <Pane layoutX="344.0" layoutY="5.0" prefHeight="376.0" prefWidth="313.0" styleClass="btAreaWhite">
-         <children>
-            <TextArea layoutX="21.0" layoutY="30.0" prefHeight="246.0" prefWidth="272.0" />
-            <Label layoutX="21.0" layoutY="3.0" styleClass="labTextBlue3" text="Description:" />
-            <Label layoutX="31.0" layoutY="332.0" styleClass="labTextBlue3" text="State:" />
-            <ChoiceBox layoutX="86.0" layoutY="331.0" prefHeight="25.0" prefWidth="198.0" />
-            <ChoiceBox layoutX="86.0" layoutY="296.0" prefHeight="25.0" prefWidth="198.0" />
-            <Label layoutX="36.0" layoutY="297.0" styleClass="labTextBlue3" text="City:" />
-            <Separator layoutX="10.0" layoutY="282.0" prefHeight="4.0" prefWidth="294.0" />
-         </children>
-      </Pane>
-      <Button layoutX="449.0" layoutY="403.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="INSERT">
-         <styleClass>
-            <String fx:value="btWhite1" />
-            <String fx:value="btWhite2" />
-         </styleClass>
-      </Button>
-      <Separator layoutX="375.0" layoutY="446.0" prefHeight="4.0" prefWidth="250.0" />
-      <Separator layoutX="375.0" layoutY="389.0" prefHeight="4.0" prefWidth="250.0" />
-   </children>
+    <children>
+        <Pane layoutX="14.0" layoutY="5.0" prefHeight="448.0" prefWidth="323.0" styleClass="btAreaWhite">
+            <children>
+                <Label alignment="CENTER" layoutX="32.0" layoutY="9.0" prefHeight="50.0" prefWidth="261.0" styleClass="labTextLazuli2" text="Insert Person" />
+                <Label layoutX="48.0" layoutY="83.0" styleClass="labTextBlue3" text="Name:" />
+                <Label layoutX="18.0" layoutY="119.0" styleClass="labTextBlue3" text="Lastname:" />
+                <Label layoutX="62.0" layoutY="154.0" styleClass="labTextBlue3" text="Age:" />
+                <Label layoutX="18.0" layoutY="189.0" styleClass="labTextBlue3" text="Password:" />
+                <Label layoutX="48.0" layoutY="224.0" styleClass="labTextBlue3" text="Email:" />
+                <Label layoutX="19.0" layoutY="259.0" styleClass="labTextBlue3" text="LandLine:" />
+                <Label layoutX="38.0" layoutY="294.0" styleClass="labTextBlue3" text="Mobile:" />
+                <Label layoutX="60.0" layoutY="329.0" styleClass="labTextBlue3" text="CPF:" />
+                <Label layoutX="58.0" layoutY="364.0" styleClass="labTextBlue3" text="Face:" />
+                <Label layoutX="47.0" layoutY="399.0" styleClass="labTextBlue3" text="Cover:" />
+                <Separator layoutX="15.0" layoutY="69.0" prefHeight="4.0" prefWidth="294.0" />
+                <Separator layoutX="15.0" layoutY="433.0" prefHeight="4.0" prefWidth="294.0" />
+                <TextField fx:id="tfName" layoutX="111.0" layoutY="82.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert your name..." />
+                <TextField fx:id="tfLastname" layoutX="111.0" layoutY="118.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert your last name..." />
+                <TextField fx:id="tfAge" layoutX="111.0" layoutY="153.0" onKeyPressed="#age" onKeyReleased="#age" onKeyTyped="#age" prefHeight="25.0" prefWidth="198.0" promptText="Insert your age..." />
+                <PasswordField fx:id="pfPassword" layoutX="111.0" layoutY="188.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert your password..." />
+                <TextField fx:id="tfEmail" layoutX="111.0" layoutY="223.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert your email..." />
+                <TextField fx:id="tfLandline" layoutX="111.0" layoutY="258.0" onKeyPressed="#numLand" onKeyReleased="#numLand" onKeyTyped="#numLand" prefHeight="25.0" prefWidth="198.0" promptText="Insert your landline..." />
+                <TextField fx:id="tfMobile" layoutX="111.0" layoutY="293.0" onKeyPressed="#numMobile" onKeyReleased="#numMobile" onKeyTyped="#numMobile" prefHeight="25.0" prefWidth="198.0" promptText="insert your mobile..." />
+                <TextField fx:id="tfCpf" layoutX="111.0" layoutY="328.0" onKeyPressed="#numCpf" onKeyReleased="#numCpf" onKeyTyped="#numCpf" prefHeight="25.0" prefWidth="198.0" promptText="Insert your cpf..." />
+                <TextField fx:id="tfFace" layoutX="111.0" layoutY="363.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert one face image..." />
+                <TextField fx:id="tfCover" layoutX="111.0" layoutY="398.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert one cover image..." />
+                <Button layoutX="285.0" layoutY="363.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" text="..." />
+                <Button layoutX="285.0" layoutY="398.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" text="..." />
+            </children>
+        </Pane>
+        <Pane layoutX="344.0" layoutY="5.0" prefHeight="376.0" prefWidth="313.0" styleClass="btAreaWhite">
+            <children>
+                <Label layoutX="21.0" layoutY="3.0" styleClass="labTextBlue3" text="Description:" />
+                <TextArea fx:id="taDescription" layoutX="21.0" layoutY="30.0" prefHeight="246.0" prefWidth="272.0" promptText="Insert your description..." />
+                <Separator layoutX="10.0" layoutY="282.0" prefHeight="4.0" prefWidth="294.0" />
+                <Label layoutX="32.0" layoutY="297.0" styleClass="labTextBlue3" text="State:" />
+                <Label layoutX="35.0" layoutY="332.0" styleClass="labTextBlue3" text="City:" />
+            <TextField fx:id="tfState" layoutX="86.0" layoutY="296.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert your state..." />
+            <TextField fx:id="tfCity" layoutX="86.0" layoutY="331.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert your city..." />
+            </children>
+        </Pane>
+        <Separator layoutX="375.0" layoutY="389.0" prefHeight="4.0" prefWidth="250.0" />
+        <Separator layoutX="375.0" layoutY="446.0" prefHeight="4.0" prefWidth="250.0" />
+        <Button layoutX="449.0" layoutY="403.0" mnemonicParsing="false" onAction="#insert" prefHeight="33.0" prefWidth="101.0" text="INSERT">
+            <styleClass>
+                <String fx:value="btWhite1" />
+                <String fx:value="btWhite2" />
+            </styleClass>
+        </Button>
+    </children>
 </AnchorPane>

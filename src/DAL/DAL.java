@@ -1,7 +1,6 @@
 package DAL;
 
 import ConnectionFactory.HibernateUtil;
-import Model.City;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -18,24 +17,26 @@ public class DAL<G> {
     private Session session;
 
     private Transaction tx;
-    
+
     private void init() {
         session = sf.openSession();
-        Transaction tx = session.beginTransaction();
+        tx = session.beginTransaction();
     }
-    
+
     //Esse método recebe um parametro genérico que será adicionado.
     public boolean add(G c) {
+        init();
         try {
-            init();
             session.save(c);
             tx.commit();
             return true;
         } catch (Exception e) {
+            e.printStackTrace();
             return false;
-        } finally {
-            closeConnection();
         }
+        /*finally {
+            closeConnection();
+        }*/
     }
 
     //Esse método recebe um parametro genérico que será editado.
@@ -82,11 +83,11 @@ public class DAL<G> {
             closeConnection();
         }
     }
-    
+
     private void closeConnection() {
         if (session.isOpen()) {
+            session.clear();
             session.close();
-            sf.close();
         }
     }
 

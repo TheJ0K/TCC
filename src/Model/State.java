@@ -16,12 +16,29 @@ import javax.persistence.*;
 public class State {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
     int idState;
     String nameState;
 
+    @OneToOne(mappedBy = "state", fetch = FetchType.EAGER)
+    @JoinColumn(name = "idphysical")
+    private PhysicalPerson physical;
+
+    @OneToOne(mappedBy = "state", fetch = FetchType.EAGER)
+    @JoinColumn(name = "idlegal")
+    private LegalPerson legalPerson;
+
+    public LegalPerson getLegalPerson() {
+        return legalPerson;
+    }
+
+    public void setLegalPerson(LegalPerson legalPerson) {
+        this.legalPerson = legalPerson;
+    }
+
     @OneToOne
-    @JoinColumn(name="idCity")
+    @JoinColumn(name = "idcity")
     private City city;
 
     public City getCity() {
@@ -32,7 +49,6 @@ public class State {
         this.city = city;
     }
 
-    
     public int getIdState() {
         return idState;
     }

@@ -12,13 +12,14 @@ import Model.LegalPerson;
 import Model.Phone;
 import Model.Photo;
 import Model.State;
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -28,7 +29,7 @@ import javafx.scene.control.*;
 public class InsertCompanyController implements Initializable {
 
     @FXML
-    private TextField tfName, tfLastname, tfCompany, tfEmail, tfLandline, tfMobile, tfCnpj, tfFace, tfCover;
+    private TextField tfName, tfLastname, tfCompany, tfEmail, tfLandline, tfMobile, tfCnpj, tfFace, tfCover, tfState, tfCity;
 
     @FXML
     private PasswordField pfPassword;
@@ -36,11 +37,7 @@ public class InsertCompanyController implements Initializable {
     @FXML
     private TextArea taDescription;
 
-    @FXML
-    private ChoiceBox cbCity, cbState;
-
-    @FXML
-    private ObservableList<String> city = FXCollections.observableArrayList("Teste");
+    public String path;
 
     @FXML
     void insert() {
@@ -53,14 +50,15 @@ public class InsertCompanyController implements Initializable {
         Photo photo = new Photo();
         City city = new City();
 
-        phone.setLandLine(Integer.valueOf(tfLandline.getText()));
-        phone.setMobile(Integer.valueOf(tfMobile.getText()));
+        phone.setLandLine(Long.valueOf(tfLandline.getText()));
+        phone.setMobile(Long.valueOf(tfMobile.getText()));
 
         photo.setFace(tfFace.getText());
         photo.setCover(tfCover.getText());
+        photo.setLegalPerson(legal);
 
-        city.setNameCity(cbCity.getValue().toString());
-        state.setNameState(cbState.getValue().toString());
+        state.setNameState(tfState.getText());
+        city.setNameCity(tfCity.getText());
         state.setCity(city);
 
         legal.setName(tfName.getText());
@@ -68,28 +66,101 @@ public class InsertCompanyController implements Initializable {
         legal.setPassword(pfPassword.getText());
         legal.setDescription(taDescription.getText());
         legal.setEmail(tfEmail.getText());
+        legal.setState(state);
 
-        legal.setPhone(phone);
-        legal.setPhoto(photo);
-        
         comp.setNameCompany(tfCompany.getText());
-        comp.setCnpj(Integer.valueOf(tfCnpj.getText()));
-        
-        dal.add(legal);
-
+        comp.setCnpj(Long.valueOf(tfCnpj.getText()));
         comp.setLegalPerson(legal);
 
-        dal.add(comp);
-        dal.add(phone);
-        dal.add(photo);
-        dal.add(state);
         dal.add(city);
+
+        dal.add(state);
+
+        dal.add(legal);
+
+        dal.add(comp);
+
+        dal.add(phone);
+
+        dal.add(photo);
+    }
+
+    @FXML
+    void numLand() {
+        String t = tfLandline.getText().replaceAll("[a-zA-Z\\á-ýÁ-Ý\\s\\.\\-\\,\\*\\/\\=\\("
+                + "\\)\\&\\¨\\%\\$\\#\\@\\!\\?\\¹\\²\\³\\£\\¢\\¬\\'\\§\\_\\ª\\[\\]"
+                + "\\º\\;\\:\\?\\~\\^\\ã-õÃ-Õ\\+\\|\\´\\`]", "");
+
+        tfLandline.setText(t);
+        tfLandline.end();
+    }
+
+    @FXML
+    void numCnpj() {
+        String t = tfCnpj.getText().replaceAll("[a-zA-Z\\á-ýÁ-Ý\\s\\.\\-\\,\\*\\/\\=\\("
+                + "\\)\\&\\¨\\%\\$\\#\\@\\!\\?\\¹\\²\\³\\£\\¢\\¬\\'\\§\\_\\ª\\[\\]"
+                + "\\º\\;\\:\\?\\~\\^\\ã-õÃ-Õ\\+\\|\\´\\`]", "");
+
+        tfCnpj.setText(t);
+        tfCnpj.end();
+    }
+
+    @FXML
+    void numMobile() {
+        Tooltip tool = new Tooltip();
+        tool.setText("Insert numbers");
+        tfMobile.setTooltip(tool);
+
+        String t = tfMobile.getText().replaceAll("[a-zA-Z\\á-ýÁ-Ý\\s\\|\\\\.\\-\\,\\*\\/\\=\\("
+                + "\\)\\&\\¨\\%\\$\\#\\@\\!\\?\\¹\\²\\³\\£\\¢\\¬\\'\\§\\_\\ª\\[\\]"
+                + "\\º\\;\\:\\?\\~\\^\\ã-õÃ-Õ\\+\\|\\´\\`]", "");
+
+        tfMobile.setText(t);
+        tfMobile.end();
+    }
+
+    @FXML
+    void imageFace() {
+        try {
+            FileChooser window = new FileChooser();
+            window.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagens", "*.jpg", "*.jpeg", "*.png"));
+            File f = window.showOpenDialog(new Stage());
+
+            if (f != null) {
+                path = ("file:///" + f.getAbsolutePath());
+                tfFace.setText(path);
+            } else {
+                Alert erro = new Alert(Alert.AlertType.WARNING);
+                erro.setHeaderText("Por favor selecione uma imagem!");
+            }
+
+        } catch (Exception ee) {
+            ee.printStackTrace();
+        }
+    }
+
+    @FXML
+    void imageCover() {
+        try {
+            FileChooser window = new FileChooser();
+            window.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagens", "*.jpg", "*.jpeg", "*.png"));
+            File f = window.showOpenDialog(new Stage());
+
+            if (f != null) {
+                path = ("file:///" + f.getAbsolutePath());
+                tfCover.setText(path);
+            } else {
+                Alert erro = new Alert(Alert.AlertType.WARNING);
+                erro.setHeaderText("Por favor selecione uma imagem!");
+            }
+
+        } catch (Exception ee) {
+            ee.printStackTrace();
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        cbCity.setItems(city);
-        cbState.setItems(city);
     }
 
 }

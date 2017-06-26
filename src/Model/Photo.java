@@ -16,13 +16,17 @@ import javax.persistence.*;
 public class Photo {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
     int idPhoto;
     String face, cover;
 
     @OneToOne
-    @JoinTable(name = "legalPerson")
-    @JoinColumn(name = "idpessoa")
+    @JoinColumn(name = "idphysical")
+    private PhysicalPerson physical;
+
+    @OneToOne
+    @JoinColumn(name = "idlegal")
     private LegalPerson legalPerson;
 
     public LegalPerson getLegalPerson() {
@@ -36,9 +40,12 @@ public class Photo {
     public Photo() {
     }
 
-    public Photo(String face, String cover) {
-        this.face = face;
-        this.cover = cover;
+    public PhysicalPerson getPhysical() {
+        return physical;
+    }
+
+    public void setPhysical(PhysicalPerson physical) {
+        this.physical = physical;
     }
 
     public int getIdPhoto() {

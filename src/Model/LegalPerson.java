@@ -15,37 +15,65 @@ import javax.persistence.*;
 @Table
 public class LegalPerson extends Person {
 
-    @Override
-    @SequenceGenerator(name = "id_legalperson")
-    public int getIdPessoa() {
-        return super.getIdPessoa();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
+    private Long idlegal;
+
+    @OneToOne(mappedBy = "legalPerson", fetch = FetchType.EAGER)
+    @JoinColumn(name = "idcompany")
+    private Company company;
+
+    @OneToOne
+    @JoinColumn(name = "idstate")
+    private State state;
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
     }
 
     @OneToOne(mappedBy = "legalPerson", fetch = FetchType.EAGER)
     @JoinColumn(name = "idphone")
-    @Override
+    private Phone phone;
+
     public Phone getPhone() {
         return phone;
     }
-    
 
-    @OneToOne(mappedBy = "legalPerson", fetch = FetchType.EAGER)
-    @JoinColumn(name = "idphoto")
-    @Override
-    public Photo getPhoto() {
-        return super.getPhoto();
+    public void setPhone(Phone phone) {
+        this.phone = phone;
     }
-    
-    private Company company;
 
-    @OneToOne(mappedBy = "legalPerson", fetch = FetchType.EAGER)
-    @JoinColumn(name = "idcompany")
+    @OneToOne
+    @JoinColumn(name = "idphoto")
+    private Photo photo;
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
+    }
+
     public Company getCompany() {
         return company;
     }
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public Long getIdlegal() {
+        return idlegal;
+    }
+
+    public void setIdlegal(Long idlegal) {
+        this.idlegal = idlegal;
     }
 
     public LegalPerson() {
