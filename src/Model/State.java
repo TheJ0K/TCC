@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -12,8 +13,8 @@ import javax.persistence.*;
  * @author tiago
  */
 @Entity
-@Table
-public class State {
+@Table(name = "states")
+public class State implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

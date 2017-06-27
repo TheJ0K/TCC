@@ -72,7 +72,7 @@ public class DAL<G> {
     public <G> List<G> getList(String c) {
         try {
             init();
-            Query q = session.createQuery("FROM " + c);
+            Query q = session.createQuery("SELECT * FROM " + c);
             q.getFirstResult();
             List<G> list = q.list();
             tx.commit();

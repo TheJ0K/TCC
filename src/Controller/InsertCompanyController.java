@@ -72,7 +72,6 @@ public class InsertCompanyController implements Initializable {
 
             state.setNameState(tfState.getText());
             city.setNameCity(tfCity.getText());
-            state.setCity(city);
 
             legal.setName(tfName.getText());
             legal.setLastName(tfLastname.getText());
@@ -87,12 +86,13 @@ public class InsertCompanyController implements Initializable {
             comp.setCnpj(Long.valueOf(tfCnpj.getText()));
             comp.setLegalPerson(legal);
 
+            dal.add(phone);
+            dal.add(photo);
             dal.add(city);
             dal.add(state);
             dal.add(legal);
             dal.add(comp);
-            dal.add(phone);
-            dal.add(photo);
+            
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Successful registration!");
             alert.setTitle("Successful registration");
