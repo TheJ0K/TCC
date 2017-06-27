@@ -41,48 +41,82 @@ public class InsertCompanyController implements Initializable {
 
     @FXML
     void insert() {
-        DAL dal = new DAL();
+        if (tfCompany.getText().equals("") || tfCity.getText().equals("") || tfCover.getText().equals("")
+                || tfCnpj.getText().equals("") || tfEmail.getText().equals("")
+                || tfFace.getText().equals("") || tfLandline.getText().equals("")
+                || tfLastname.getText().equals("") || tfMobile.getText().equals("")
+                || tfName.getText().equals("") || tfState.getText().equals("") || taDescription.getText().equals("")
+                || pfPassword.getText().equals("")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("There are null fields, please review!");
+            alert.setTitle("Null fields");
+            alert.showAndWait();
+        } else {
+            //Cria o objeto dal para chamar uasr as opções de CRUD
+            DAL dal = new DAL();
 
-        Company comp = new Company();
-        Phone phone = new Phone();
-        LegalPerson legal = new LegalPerson();
-        State state = new State();
-        Photo photo = new Photo();
-        City city = new City();
+            //Cria objetos de cada classe necessaria
+            Company comp = new Company();
+            Phone phone = new Phone();
+            LegalPerson legal = new LegalPerson();
+            State state = new State();
+            Photo photo = new Photo();
+            City city = new City();
 
-        phone.setLandLine(Long.valueOf(tfLandline.getText()));
-        phone.setMobile(Long.valueOf(tfMobile.getText()));
+            //Seta valores de acordo com os campos
+            phone.setLandLine(Long.valueOf(tfLandline.getText()));
+            phone.setMobile(Long.valueOf(tfMobile.getText()));
 
-        photo.setFace(tfFace.getText());
-        photo.setCover(tfCover.getText());
-        photo.setLegalPerson(legal);
+            photo.setFace(tfFace.getText());
+            photo.setCover(tfCover.getText());
 
-        state.setNameState(tfState.getText());
-        city.setNameCity(tfCity.getText());
-        state.setCity(city);
+            state.setNameState(tfState.getText());
+            city.setNameCity(tfCity.getText());
+            state.setCity(city);
 
-        legal.setName(tfName.getText());
-        legal.setLastName(tfLastname.getText());
-        legal.setPassword(pfPassword.getText());
-        legal.setDescription(taDescription.getText());
-        legal.setEmail(tfEmail.getText());
-        legal.setState(state);
+            legal.setName(tfName.getText());
+            legal.setLastName(tfLastname.getText());
+            legal.setPassword(pfPassword.getText());
+            legal.setDescription(taDescription.getText());
+            legal.setEmail(tfEmail.getText());
+            legal.setState(state);
+            legal.setPhone(phone);
+            legal.setPhoto(photo);
 
-        comp.setNameCompany(tfCompany.getText());
-        comp.setCnpj(Long.valueOf(tfCnpj.getText()));
-        comp.setLegalPerson(legal);
+            comp.setNameCompany(tfCompany.getText());
+            comp.setCnpj(Long.valueOf(tfCnpj.getText()));
+            comp.setLegalPerson(legal);
 
-        dal.add(city);
+            dal.add(city);
+            dal.add(state);
+            dal.add(legal);
+            dal.add(comp);
+            dal.add(phone);
+            dal.add(photo);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Successful registration!");
+            alert.setTitle("Successful registration");
+            alert.showAndWait();
 
-        dal.add(state);
+            clear();
+        }
+    }
 
-        dal.add(legal);
-
-        dal.add(comp);
-
-        dal.add(phone);
-
-        dal.add(photo);
+    @FXML
+    void clear() {
+        tfCompany.clear();
+        tfCity.clear();
+        tfCover.clear();
+        tfCnpj.clear();
+        tfEmail.clear();
+        tfFace.clear();
+        tfLandline.clear();
+        tfLastname.clear();
+        tfMobile.clear();
+        tfName.clear();
+        tfState.clear();
+        taDescription.clear();
+        pfPassword.clear();
     }
 
     @FXML

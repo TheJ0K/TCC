@@ -21,11 +21,11 @@ public class Phone {
     private Long idPhone;
     private Long landLine, mobile;
     
-    @OneToOne
+    @OneToOne(mappedBy = "phone", fetch = FetchType.EAGER)
     @JoinColumn(name = "idlegal")
     private LegalPerson legalPerson;
 
-    @OneToOne
+    @OneToOne(mappedBy = "phone", fetch = FetchType.EAGER)
     @JoinColumn(name = "idphysical")
     private PhysicalPerson physicalPerson;
 

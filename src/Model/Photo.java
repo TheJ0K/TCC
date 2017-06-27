@@ -18,14 +18,14 @@ public class Photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
-    int idPhoto;
-    String face, cover;
+    private Long idPhoto;
+    private String face, cover;
 
-    @OneToOne
+    @OneToOne(mappedBy = "photo", fetch = FetchType.EAGER)
     @JoinColumn(name = "idphysical")
     private PhysicalPerson physical;
 
-    @OneToOne
+    @OneToOne(mappedBy = "photo", fetch = FetchType.EAGER)
     @JoinColumn(name = "idlegal")
     private LegalPerson legalPerson;
 
@@ -48,11 +48,11 @@ public class Photo {
         this.physical = physical;
     }
 
-    public int getIdPhoto() {
+    public Long getIdPhoto() {
         return idPhoto;
     }
 
-    public void setIdPhoto(int idPhoto) {
+    public void setIdPhoto(Long idPhoto) {
         this.idPhoto = idPhoto;
     }
 

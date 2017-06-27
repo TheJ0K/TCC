@@ -28,6 +28,17 @@ public class LegalPerson extends Person {
     @JoinColumn(name = "idstate")
     private State state;
 
+    @OneToOne
+    @JoinColumn(name = "idphone")
+    private Phone phone;
+
+    @OneToOne
+    @JoinColumn(name = "idphoto")
+    private Photo photo;
+
+    public LegalPerson() {
+    }
+
     public State getState() {
         return state;
     }
@@ -36,10 +47,6 @@ public class LegalPerson extends Person {
         this.state = state;
     }
 
-    @OneToOne(mappedBy = "legalPerson", fetch = FetchType.EAGER)
-    @JoinColumn(name = "idphone")
-    private Phone phone;
-
     public Phone getPhone() {
         return phone;
     }
@@ -47,10 +54,6 @@ public class LegalPerson extends Person {
     public void setPhone(Phone phone) {
         this.phone = phone;
     }
-
-    @OneToOne
-    @JoinColumn(name = "idphoto")
-    private Photo photo;
 
     public Photo getPhoto() {
         return photo;
@@ -74,9 +77,6 @@ public class LegalPerson extends Person {
 
     public void setIdlegal(Long idlegal) {
         this.idlegal = idlegal;
-    }
-
-    public LegalPerson() {
     }
 
 }

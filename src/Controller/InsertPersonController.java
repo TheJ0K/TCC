@@ -30,50 +30,51 @@ import javafx.stage.Stage;
  * @author Diogo Fistarol
  */
 public class InsertPersonController implements Initializable {
-    
+
     @FXML
     private TextField tfName, tfLastname, tfEmail, tfLandline, tfMobile, tfCpf, tfFace, tfCover, tfState, tfCity, tfAge;
-    
+
     @FXML
     private PasswordField pfPassword;
-    
+
     @FXML
     private TextArea taDescription;
-    
+
     public String path;
-    
+
     @FXML
     void insert() {
         if (tfAge.getText().equals("") || tfCity.getText().equals("") || tfCover.getText().equals("")
                 || tfCpf.getText().equals("") || tfEmail.getText().equals("")
                 || tfFace.getText().equals("") || tfLandline.getText().equals("")
                 || tfLastname.getText().equals("") || tfMobile.getText().equals("")
-                || tfName.getText().equals("") || tfState.getText().equals("")) {
+                || tfName.getText().equals("") || tfState.getText().equals("") || taDescription.getText().equals("")
+                || pfPassword.getText().equals("")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("There are null fields, please review!");
             alert.setTitle("Null fields");
             alert.showAndWait();
-            
+
         } else {
             DAL dal = new DAL();
-            
+
             Developer dev = new Developer();
             Phone phone = new Phone();
             PhysicalPerson physical = new PhysicalPerson();
             State state = new State();
             Photo photo = new Photo();
             City city = new City();
-            
+
             phone.setLandLine(Long.valueOf(tfLandline.getText()));
             phone.setMobile(Long.valueOf(tfMobile.getText()));
-            
+
             photo.setFace(tfFace.getText());
             photo.setCover(tfCover.getText());
-            
+
             state.setNameState(tfState.getText());
             city.setNameCity(tfCity.getText());
             state.setCity(city);
-            
+
             physical.setName(tfName.getText());
             physical.setLastName(tfLastname.getText());
             physical.setPassword(pfPassword.getText());
@@ -82,75 +83,75 @@ public class InsertPersonController implements Initializable {
             physical.setState(state);
             physical.setPhone(phone);
             physical.setPhoto(photo);
-            
+
             dev.setAge(Long.valueOf(tfAge.getText()));
             dev.setCpf(Long.valueOf(tfCpf.getText()));
             dev.setPhysicalPerson(physical);
-            
+
+            dal.add(phone);
             dal.add(photo);
             dal.add(city);
             dal.add(state);
             dal.add(physical);
             dal.add(dev);
-            dal.add(phone);
-            
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Successful registration!");
             alert.setTitle("Successful registration");
             alert.showAndWait();
-            
+
             clear();
         }
-        
+
     }
-    
+
     @FXML
     void numLand() {
         String t = tfLandline.getText().replaceAll("[a-zA-Z\\á-ýÁ-Ý\\s\\.\\-\\,\\*\\/\\=\\("
                 + "\\)\\&\\¨\\%\\$\\#\\@\\!\\?\\¹\\²\\³\\£\\¢\\¬\\'\\§\\_\\ª\\[\\]"
                 + "\\º\\;\\:\\?\\~\\^\\ã-õÃ-Õ\\+\\|\\´\\`]", "");
-        
+
         tfLandline.setText(t);
         tfLandline.end();
     }
-    
+
     @FXML
     void numCpf() {
         String t = tfCpf.getText().replaceAll("[a-zA-Z\\á-ýÁ-Ý\\s\\.\\-\\,\\*\\/\\=\\("
                 + "\\)\\&\\¨\\%\\$\\#\\@\\!\\?\\¹\\²\\³\\£\\¢\\¬\\'\\§\\_\\ª\\[\\]"
                 + "\\º\\;\\:\\?\\~\\^\\ã-õÃ-Õ\\+\\|\\´\\`]", "");
-        
+
         tfCpf.setText(t);
         tfCpf.end();
     }
-    
+
     @FXML
     void numMobile() {
         String t = tfMobile.getText().replaceAll("[a-zA-Z\\á-ýÁ-Ý\\s\\|\\\\.\\-\\,\\*\\/\\=\\("
                 + "\\)\\&\\¨\\%\\$\\#\\@\\!\\?\\¹\\²\\³\\£\\¢\\¬\\'\\§\\_\\ª\\[\\]"
                 + "\\º\\;\\:\\?\\~\\^\\ã-õÃ-Õ\\+\\|\\´\\`]", "");
-        
+
         tfMobile.setText(t);
         tfMobile.end();
     }
-    
+
     @FXML
     void age() {
         String t = tfAge.getText().replaceAll("[a-zA-Z\\á-ýÁ-Ý\\s\\|\\\\.\\-\\,\\*\\/\\=\\("
                 + "\\)\\&\\¨\\%\\$\\#\\@\\!\\?\\¹\\²\\³\\£\\¢\\¬\\'\\§\\_\\ª\\[\\]"
                 + "\\º\\;\\:\\?\\~\\^\\ã-õÃ-Õ\\+\\|\\´\\`]", "");
-        
+
         tfAge.setText(t);
         tfAge.end();
     }
-    
+
     @FXML
     void imageFace() {
         try {
             FileChooser window = new FileChooser();
             window.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagens", "*.jpg", "*.jpeg", "*.png"));
             File f = window.showOpenDialog(new Stage());
-            
+
             if (f != null) {
                 path = ("file:///" + f.getAbsolutePath());
                 tfFace.setText(path);
@@ -158,19 +159,19 @@ public class InsertPersonController implements Initializable {
                 Alert erro = new Alert(Alert.AlertType.WARNING);
                 erro.setHeaderText("Por favor selecione uma imagem!");
             }
-            
+
         } catch (Exception ee) {
             ee.printStackTrace();
         }
     }
-    
+
     @FXML
     void imageCover() {
         try {
             FileChooser window = new FileChooser();
             window.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagens", "*.jpg", "*.jpeg", "*.png"));
             File f = window.showOpenDialog(new Stage());
-            
+
             if (f != null) {
                 path = ("file:///" + f.getAbsolutePath());
                 tfCover.setText(path);
@@ -178,12 +179,12 @@ public class InsertPersonController implements Initializable {
                 Alert erro = new Alert(Alert.AlertType.WARNING);
                 erro.setHeaderText("Por favor selecione uma imagem!");
             }
-            
+
         } catch (Exception ee) {
             ee.printStackTrace();
         }
     }
-    
+
     @FXML
     void clear() {
         tfAge.clear();
@@ -197,11 +198,13 @@ public class InsertPersonController implements Initializable {
         tfMobile.clear();
         tfName.clear();
         tfState.clear();
+        taDescription.clear();
+        pfPassword.clear();
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
     }
-    
+
 }

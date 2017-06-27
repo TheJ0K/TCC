@@ -18,8 +18,8 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
-    int idCity;
-    String nameCity;
+    private Long idCity;
+    private String nameCity;
 
     @OneToOne(mappedBy = "city", fetch = FetchType.EAGER)
     @JoinColumn(name = "idstate")

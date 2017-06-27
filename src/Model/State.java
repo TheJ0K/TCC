@@ -18,8 +18,8 @@ public class State {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
-    int idState;
-    String nameState;
+    private int idState;
+    private String nameState;
 
     @OneToOne(mappedBy = "state", fetch = FetchType.EAGER)
     @JoinColumn(name = "idphysical")
@@ -29,17 +29,20 @@ public class State {
     @JoinColumn(name = "idlegal")
     private LegalPerson legalPerson;
 
-    public LegalPerson getLegalPerson() {
-        return legalPerson;
-    }
-
-    public void setLegalPerson(LegalPerson legalPerson) {
-        this.legalPerson = legalPerson;
-    }
-
     @OneToOne
     @JoinColumn(name = "idcity")
     private City city;
+
+    public State() {
+    }
+
+    public PhysicalPerson getPhysical() {
+        return physical;
+    }
+
+    public void setPhysical(PhysicalPerson physical) {
+        this.physical = physical;
+    }
 
     public City getCity() {
         return city;
@@ -47,6 +50,14 @@ public class State {
 
     public void setCity(City city) {
         this.city = city;
+    }
+
+    public LegalPerson getLegalPerson() {
+        return legalPerson;
+    }
+
+    public void setLegalPerson(LegalPerson legalPerson) {
+        this.legalPerson = legalPerson;
     }
 
     public int getIdState() {
@@ -57,13 +68,6 @@ public class State {
         this.idState = idState;
     }
 
-    /*public City getCity() {
-        return city;
-    }
-
-    public void setCity(City city) {
-        this.city = city;
-    }*/
     public String getNameState() {
         return nameState;
     }

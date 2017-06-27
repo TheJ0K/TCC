@@ -28,11 +28,11 @@ public class PhysicalPerson extends Person {
     @JoinColumn(name = "idstate")
     private State state;
 
-    @OneToOne(mappedBy = "physicalPerson", fetch = FetchType.EAGER)
+    @OneToOne
     @JoinColumn(name = "idphone")
     private Phone phone;
 
-    @OneToOne(mappedBy = "physicalPerson", fetch = FetchType.EAGER)
+    @OneToOne
     @JoinColumn(name = "idphoto")
     private Photo photo;
 

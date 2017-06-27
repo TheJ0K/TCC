@@ -32,10 +32,10 @@
                 <TextField fx:id="tfLandline" layoutX="111.0" layoutY="258.0" onKeyPressed="#numLand" onKeyReleased="#numLand" onKeyTyped="#numLand" prefHeight="25.0" prefWidth="198.0" promptText="Insert your landline..." />
                 <TextField fx:id="tfMobile" layoutX="111.0" layoutY="293.0" onKeyPressed="#numMobile" onKeyReleased="#numMobile" onKeyTyped="#numMobile" prefHeight="25.0" prefWidth="198.0" promptText="insert your mobile..." />
                 <TextField fx:id="tfCpf" layoutX="111.0" layoutY="328.0" onKeyPressed="#numCpf" onKeyReleased="#numCpf" onKeyTyped="#numCpf" prefHeight="25.0" prefWidth="198.0" promptText="Insert your cpf..." />
-                <TextField fx:id="tfFace" layoutX="111.0" layoutY="363.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert one face image..." />
-                <TextField fx:id="tfCover" layoutX="111.0" layoutY="398.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert one cover image..." />
-                <Button layoutX="285.0" layoutY="363.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" text="..." />
-                <Button layoutX="285.0" layoutY="398.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" text="..." />
+                <TextField fx:id="tfFace" editable="false" layoutX="111.0" layoutY="363.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert one face image..." />
+                <TextField fx:id="tfCover" editable="false" layoutX="111.0" layoutY="398.0" prefHeight="25.0" prefWidth="198.0" promptText="Insert one cover image..." />
+                <Button layoutX="285.0" layoutY="363.0" mnemonicParsing="false" onAction="#imageFace" prefHeight="25.0" prefWidth="23.0" text="..." />
+                <Button layoutX="285.0" layoutY="398.0" mnemonicParsing="false" onAction="#imageCover" prefHeight="25.0" prefWidth="23.0" text="..." />
             </children>
         </Pane>
         <Pane layoutX="344.0" layoutY="5.0" prefHeight="376.0" prefWidth="313.0" styleClass="btAreaWhite">
