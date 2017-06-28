@@ -5,12 +5,18 @@
  */
 package Controller;
 
+import DAL.DAL;
 import Main.MGraphicCompanyPerson;
 import Main.MMain;
+import Model.Company;
+import Model.Developer;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.PieChart;
 import javafx.stage.Stage;
 
 /**
@@ -19,7 +25,14 @@ import javafx.stage.Stage;
  * @author Diogo Fistarol
  */
 public class GraphicCompanyPersonController implements Initializable {
-    
+
+    @FXML
+    private PieChart piePersonCompany;
+
+    private ObservableList<Company> comp_oblist;
+
+    private ObservableList<Developer> dev_oblist;
+
     @FXML
     void back() {
         MMain main = new MMain();
@@ -30,15 +43,25 @@ public class GraphicCompanyPersonController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
-    void close(){
+    void close() {
         MGraphicCompanyPerson.getStage().close();
     }
-    
+
+    @FXML
+    void graphic() {
+        DAL dal = new DAL();
+        comp_oblist = FXCollections.observableArrayList(dal.getList("Company"));
+        dev_oblist = FXCollections.observableArrayList(dal.getList("Developer"));
+
+        piePersonCompany.getData().addAll(new PieChart.Data("Company", comp_oblist.size()),
+                 new PieChart.Data("Developer", dev_oblist.size()));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        graphic();
+    }
+
 }

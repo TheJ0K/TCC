@@ -25,6 +25,22 @@ public class City {
     @JoinColumn(name = "idstate")
     private State state;
 
+    public Long getIdCity() {
+        return idCity;
+    }
+
+    public void setIdCity(Long idCity) {
+        this.idCity = idCity;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
     public String getNameCity() {
         return nameCity;
     }

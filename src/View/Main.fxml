@@ -16,65 +16,20 @@
       <URL value="@../CSS/Complement.css" />
    </stylesheets>
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="600.0" styleClass="menubarWhite">
-        <menus>
-          <Menu mnemonicParsing="false" text="Graphics">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Company" />
-                  <MenuItem mnemonicParsing="false" text="Person" />
-                  <MenuItem mnemonicParsing="false" text="Company-Person" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Data">
-            <items>
-              <MenuItem mnemonicParsing="false" styleClass="menubuttonA1" text="Company" />
-                  <MenuItem mnemonicParsing="false" text="Person" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-         <effect>
-            <DropShadow />
-         </effect>
-      </MenuBar>
-      <Pane layoutX="426.0" layoutY="156.0" prefHeight="132.0" prefWidth="167.0" styleClass="btAreaWhite">
+      <Pane layoutX="215.0" layoutY="108.0" prefHeight="181.0" prefWidth="223.0" styleClass="btAreaWhite">
          <children>
-            <Button layoutX="39.0" layoutY="68.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="WEB">
-               <styleClass>
-                  <String fx:value="btBlue1" />
-                  <String fx:value="btBlue2" />
-               </styleClass>
+            <ImageView fitHeight="45.0" fitWidth="42.0" layoutX="31.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/table.png" />
+               </image>
                <effect>
                   <InnerShadow />
                </effect>
-            </Button>
-            <Label layoutX="18.0" layoutY="14.0" styleClass="labTextBlue" text="Configuration">
+            </ImageView>
+            <Label layoutX="90.0" layoutY="15.0" styleClass="labTextBlue" text="Data">
                <effect>
                   <InnerShadow />
                </effect></Label>
-         </children>
-         <effect>
-            <DropShadow>
-               <input>
-                  <InnerShadow />
-               </input></DropShadow>
-         </effect>
-      </Pane>
-      <Pane layoutX="215.0" layoutY="108.0" prefHeight="181.0" prefWidth="223.0" styleClass="btAreaWhite">
-         <children>
-            <Button layoutX="23.0" layoutY="115.0" mnemonicParsing="false" onAction="#ddeve" prefHeight="33.0" prefWidth="190.0" text="DATA PERSON">
-               <styleClass>
-                  <String fx:value="btBlue1" />
-                  <String fx:value="btBlue2" />
-               </styleClass>
-               <effect>
-                  <InnerShadow />
-               </effect>
-            </Button>
             <Button layoutX="24.0" layoutY="58.0" mnemonicParsing="false" onAction="#dcomp" prefHeight="33.0" prefWidth="190.0" text="DATA COMPANY">
                <styleClass>
                   <String fx:value="btBlue1" />
@@ -84,18 +39,15 @@
                   <InnerShadow />
                </effect>
             </Button>
-            <Label layoutX="90.0" layoutY="15.0" styleClass="labTextBlue" text="Data">
-               <effect>
-                  <InnerShadow />
-               </effect></Label>
-            <ImageView fitHeight="45.0" fitWidth="42.0" layoutX="31.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/table.png" />
-               </image>
+            <Button layoutX="23.0" layoutY="115.0" mnemonicParsing="false" onAction="#ddeve" prefHeight="33.0" prefWidth="190.0" text="DATA PERSON">
+               <styleClass>
+                  <String fx:value="btBlue1" />
+                  <String fx:value="btBlue2" />
+               </styleClass>
                <effect>
                   <InnerShadow />
                </effect>
-            </ImageView>
+            </Button>
          </children>
          <effect>
             <DropShadow>
@@ -106,6 +58,18 @@
       </Pane>
       <Pane layoutX="8.0" layoutY="49.0" prefHeight="241.0" prefWidth="223.0" styleClass="btAreaWhite">
          <children>
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/graphics.png" />
+               </image>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </ImageView>
+            <Label layoutX="68.0" layoutY="14.0" styleClass="labTextBlue" text="Graphics">
+               <effect>
+                  <InnerShadow />
+               </effect></Label>
             <Button layoutX="12.0" layoutY="58.0" mnemonicParsing="false" onAction="#gcomp" prefHeight="33.0" prefWidth="199.0" text="GRAPHIC COMPANY">
                <styleClass>
                   <String fx:value="btBlue1" />
@@ -124,10 +88,6 @@
                   <InnerShadow />
                </effect>
             </Button>
-            <Label layoutX="68.0" layoutY="14.0" styleClass="labTextBlue" text="Graphics">
-               <effect>
-                  <InnerShadow />
-               </effect></Label>
             <Button layoutX="12.0" layoutY="174.0" mnemonicParsing="false" onAction="#gdevcom" prefHeight="33.0" prefWidth="199.0" text="GRAPHIC COMPANY-PERSON">
                <styleClass>
                   <String fx:value="btBlue1" />
@@ -137,14 +97,6 @@
                   <InnerShadow />
                </effect>
             </Button>
-            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/graphics.png" />
-               </image>
-               <effect>
-                  <InnerShadow />
-               </effect>
-            </ImageView>
          </children>
          <effect>
             <DropShadow>
@@ -154,14 +106,8 @@
          </effect>
       </Pane>
       <Separator layoutX="40.0" layoutY="325.0" prefHeight="1.0" prefWidth="521.0" />
-      <Button layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="101.0" text="BACK">
-         <styleClass>
-            <String fx:value="btWhite1" />
-            <String fx:value="btWhite2" />
-         </styleClass>
-      </Button>
-      <DatePicker layoutX="400.0" layoutY="353.0" opacity="0.93" prefHeight="27.0" prefWidth="161.0" styleClass="datepickerWhite" />
-      <Circle fill="#eff1f3" layoutX="508.0" layoutY="88.0" radius="58.0" stroke="#eff1f3" strokeType="INSIDE">
+      <DatePicker fx:id="dpNow" editable="false" layoutX="417.0" layoutY="49.0" opacity="0.93" prefHeight="27.0" prefWidth="161.0" styleClass="datepickerWhite" />
+      <Circle fill="#eff1f3" layoutX="520.0" layoutY="199.0" radius="58.0" stroke="#eff1f3" strokeType="INSIDE">
          <effect>
             <DropShadow>
                <input>
@@ -169,6 +115,12 @@
                </input></DropShadow>
          </effect>
       </Circle>
-      <Label layoutX="454.0" layoutY="65.0" styleClass="labTextBlue2" text="DROP" />
+      <Label layoutX="467.0" layoutY="178.0" styleClass="labTextBlue2" text="DROP" />
+      <Button layoutX="276.0" layoutY="347.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="101.0" text="BACK">
+         <styleClass>
+            <String fx:value="btWhite1" />
+            <String fx:value="btWhite2" />
+         </styleClass>
+      </Button>
    </children>
 </AnchorPane>

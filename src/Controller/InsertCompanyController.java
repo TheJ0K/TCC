@@ -72,6 +72,7 @@ public class InsertCompanyController implements Initializable {
 
             state.setNameState(tfState.getText());
             city.setNameCity(tfCity.getText());
+            state.setCity(city);
 
             legal.setName(tfName.getText());
             legal.setLastName(tfLastname.getText());

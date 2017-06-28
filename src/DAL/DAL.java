@@ -61,6 +61,7 @@ public class DAL<G> {
             tx.commit();
             return true;
         } catch (Exception e) {
+            e.printStackTrace();
             return false;
         } finally {
             closeConnection();
@@ -72,9 +73,9 @@ public class DAL<G> {
     public <G> List<G> getList(String c) {
         try {
             init();
-            Query q = session.createQuery("SELECT * FROM " + c);
+            Query q = session.createQuery("FROM " + c);
             q.getFirstResult();
-            List<G> list = q.list();
+            List<G> list =  q.list();
             tx.commit();
             return list;
         } catch (Exception e) {

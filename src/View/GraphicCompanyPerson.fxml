@@ -10,15 +10,16 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="backgroundBlue" stylesheets="@../CSS/Complement.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GraphicCompanyPersonController">
    <children>
+      <Label layoutX="29.0" layoutY="-4.0" styleClass="labTextWhite" text="Company-Person" />
       <Pane layoutX="13.0" layoutY="37.0" prefHeight="328.0" prefWidth="574.0" styleClass="btAreaWhite" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="22.0">
          <effect>
             <InnerShadow />
          </effect>
          <children>
-            <PieChart prefHeight="328.0" prefWidth="574.0" />
+            <PieChart fx:id="piePersonCompany" prefHeight="328.0" prefWidth="574.0" />
          </children>
       </Pane>
-      <Button layoutX="384.0" layoutY="359.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="RELOAD" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="359.0">
+      <Button layoutX="384.0" layoutY="359.0" mnemonicParsing="false" onAction="#graphic" prefHeight="33.0" prefWidth="101.0" text="RELOAD" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="359.0">
          <styleClass>
             <String fx:value="btWhite1" />
             <String fx:value="btWhite2" />
@@ -30,6 +31,5 @@
             <String fx:value="btWhite2" />
          </styleClass>
       </Button>
-      <Label layoutX="29.0" layoutY="-4.0" styleClass="labTextWhite" text="Company-Person" />
    </children>
 </AnchorPane>

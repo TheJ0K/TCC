@@ -13,12 +13,14 @@ import Main.MGraphicPerson;
 import Main.MLogin;
 import Main.MMain;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
 /**
@@ -28,6 +30,9 @@ import javafx.stage.Stage;
  */
 public class MainController implements Initializable {
 
+    @FXML
+    private DatePicker dpNow;
+    
     @FXML
     void gcomp() {
         MGraphicCompany gc = new MGraphicCompany();
@@ -104,10 +109,15 @@ public class MainController implements Initializable {
     void close() {
         MMain.getStage().close();
     }
+    
+    @FXML
+    void dateNow() {
+        dpNow.setValue(LocalDate.now());
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        dateNow();
     }
 
 }

@@ -10,9 +10,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="backgroundBlue" stylesheets="@../CSS/Complement.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GraphicCompanyController">
    <children>
+      <Label layoutX="31.0" layoutY="-3.0" styleClass="labTextWhite" text="Company" />
       <Pane layoutX="13.0" layoutY="14.0" prefHeight="328.0" prefWidth="574.0" styleClass="btAreaWhite" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="22.0">
          <children>
-            <BarChart prefHeight="328.0" prefWidth="574.0">
+            <BarChart fx:id="barCompany" prefHeight="328.0" prefWidth="574.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -31,12 +32,11 @@
             <String fx:value="btWhite2" />
          </styleClass>
       </Button>
-      <Button layoutX="384.0" layoutY="358.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="101.0" text="RELOAD" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="384.0" AnchorPane.rightAnchor="115.0" AnchorPane.topAnchor="358.0">
+      <Button layoutX="384.0" layoutY="358.0" mnemonicParsing="false" onAction="#graphicComp" prefHeight="33.0" prefWidth="101.0" text="RELOAD" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="384.0" AnchorPane.rightAnchor="115.0" AnchorPane.topAnchor="358.0">
          <styleClass>
             <String fx:value="btWhite1" />
             <String fx:value="btWhite2" />
          </styleClass>
       </Button>
-      <Label layoutX="31.0" layoutY="-3.0" styleClass="labTextWhite" text="Company" />
    </children>
 </AnchorPane>
