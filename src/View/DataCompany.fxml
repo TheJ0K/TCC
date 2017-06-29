@@ -31,7 +31,7 @@
                         <Pane layoutX="832.0" layoutY="-4.0" prefHeight="444.0" prefWidth="444.0" styleClass="backgroundBlack">
                             <children>
                                 <Label alignment="CENTER" layoutX="11.0" layoutY="36.0" prefHeight="45.0" prefWidth="423.0" styleClass="labTextLazuli2" text="Data Company" />
-                                <TextField fx:id="tfSearch" layoutX="11.0" layoutY="7.0" prefHeight="25.0" prefWidth="423.0" promptText="Search name..." />
+                                <TextField fx:id="tfSearch" layoutX="11.0" layoutY="7.0" onKeyPressed="#search" onKeyReleased="#search" prefHeight="25.0" prefWidth="423.0" promptText="Search name..." />
                                 <TabPane layoutY="81.0" prefHeight="365.0" prefWidth="444.0" tabClosingPolicy="UNAVAILABLE">
                                     <tabs>
                                         <Tab text=" Face ">

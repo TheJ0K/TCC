@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.URL;
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -338,6 +339,18 @@ public class DataCompanyController implements Initializable {
             }
         }
         );
+    }
+    
+    @FXML
+    public void search() {
+        ObservableList<LegalPerson> lp = FXCollections.observableArrayList();
+        
+        for (LegalPerson legal : company_oblist) {
+            if (legal.getName().contains(tfSearch.getText())) {
+                lp.add(legal);
+            }
+        }
+        tvCompany.setItems(lp);       
     }
     
     @Override

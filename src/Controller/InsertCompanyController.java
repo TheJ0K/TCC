@@ -8,6 +8,7 @@ package Controller;
 import DAL.DAL;
 import Model.City;
 import Model.Company;
+import Model.Encryption;
 import Model.LegalPerson;
 import Model.Phone;
 import Model.Photo;
@@ -76,7 +77,7 @@ public class InsertCompanyController implements Initializable {
 
             legal.setName(tfName.getText());
             legal.setLastName(tfLastname.getText());
-            legal.setPassword(pfPassword.getText());
+            legal.setPassword(Encryption.encrypt(pfPassword.getText()));
             legal.setDescription(taDescription.getText());
             legal.setEmail(tfEmail.getText());
             legal.setState(state);

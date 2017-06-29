@@ -346,6 +346,18 @@ public class DataPersonController implements Initializable {
         );
     }
 
+    @FXML
+    public void search() {
+        ObservableList<PhysicalPerson> pp = FXCollections.observableArrayList();
+
+        for (PhysicalPerson physical : developer_oblist) {
+            if (physical.getName().contains(tfSearch.getText())) {
+                pp.add(physical);
+            }
+        }
+        tvDeveloper.setItems(pp);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         init();

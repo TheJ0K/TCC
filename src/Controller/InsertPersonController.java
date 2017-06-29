@@ -8,6 +8,7 @@ package Controller;
 import DAL.DAL;
 import Model.City;
 import Model.Developer;
+import Model.Encryption;
 import Model.Phone;
 import Model.Photo;
 import Model.PhysicalPerson;
@@ -77,7 +78,7 @@ public class InsertPersonController implements Initializable {
 
             physical.setName(tfName.getText());
             physical.setLastName(tfLastname.getText());
-            physical.setPassword(pfPassword.getText());
+            physical.setPassword(Encryption.encrypt(pfPassword.getText()));
             physical.setDescription(taDescription.getText());
             physical.setEmail(tfEmail.getText());
             physical.setState(state);
