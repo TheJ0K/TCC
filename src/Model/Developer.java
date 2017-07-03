@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -26,15 +27,27 @@ public class Developer {
     @JoinColumn(name = "idpessoa")
     PhysicalPerson physicalPerson;
 
+    @OneToMany(mappedBy = "developer", fetch = FetchType.LAZY,
+            targetEntity = IdeaDeveloper.class, cascade = CascadeType.ALL)
+    private List<IdeaDeveloper> ideadeve;
+
     public Developer() {
     }
 
-    public Long getIdDeveloper() {
+    public Long getIddeveloper() {
         return iddeveloper;
     }
 
-    public void setIdDeveloper(Long developer) {
-        this.iddeveloper = developer;
+    public void setIddeveloper(Long iddeveloper) {
+        this.iddeveloper = iddeveloper;
+    }
+
+    public List<IdeaDeveloper> getIdeadeve() {
+        return ideadeve;
+    }
+
+    public void setIdeadeve(List<IdeaDeveloper> ideadeve) {
+        this.ideadeve = ideadeve;
     }
 
     public Long getAge() {
@@ -52,7 +65,6 @@ public class Developer {
     public void setPhysicalPerson(PhysicalPerson physicalPerson) {
         this.physicalPerson = physicalPerson;
     }
-    
 
     public Long getCpf() {
         return cpf;

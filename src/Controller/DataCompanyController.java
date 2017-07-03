@@ -57,16 +57,16 @@ import javafx.util.Callback;
  * @author Diogo Fistarol
  */
 public class DataCompanyController implements Initializable {
-    
+
     @FXML
     private TextArea taDescription;
-    
+
     @FXML
     private TextField tfSearch;
-    
+
     @FXML
     private ImageView imageFace, imageCover;
-    
+
     @FXML
     private TableView<LegalPerson> tvCompany;
     @FXML
@@ -87,22 +87,22 @@ public class DataCompanyController implements Initializable {
     private TableColumn<LegalPerson, Long> tcMobile;
     @FXML
     private TableColumn<LegalPerson, Long> tcCnpj;
-    
+
     public static LegalPerson selected;
     private Company comp;
     private Phone phone;
     private Photo photo;
     private State state;
     private City city;
-    
+
     private String path = "/Image/imgDesign.jpg";
-    
+
     private ObservableList<LegalPerson> company_oblist;
-    
+
     @FXML
     void pdfGenerator() {
         Document doc = new Document();
-        
+
         FileChooser window = new FileChooser();
         window.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF", "*.pdf"));
         File a = window.showSaveDialog(new Stage());
@@ -146,9 +146,9 @@ public class DataCompanyController implements Initializable {
             alert.setTitle("Nothing selected");
             alert.showAndWait();
         }
-        
+
     }
-    
+
     @FXML
     void reload() {
         DAL dal = new DAL();
@@ -192,28 +192,29 @@ public class DataCompanyController implements Initializable {
                 return new SimpleObjectProperty<>(param.getValue().getCompany().getCnpj());
             }
         });
-        
+
         company_oblist = FXCollections.observableArrayList(dal.getList("LegalPerson"));
         tvCompany.setItems(company_oblist);
-        
+
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setTitle("Upgraded table");
         a.setHeaderText("Upgraded table!");
         a.showAndWait();
     }
-    
+
     @FXML
     void delete() {
         if (selected != null) {
             DAL dal = new DAL();
-            
+
             Alert t = new Alert(Alert.AlertType.CONFIRMATION);
             t.setTitle("Really delete?!");
             t.setHeaderText("Do you really want to delete?!");
             Optional<ButtonType> bt = t.showAndWait();
-            
+
             if (bt.get() == ButtonType.OK) {
                 try {
+                    dal.delete(selected.getCompany().getIdeaCompany());
                     dal.delete(selected.getCompany());
                     dal.delete(selected);
                     dal.delete(selected.getPhone());
@@ -228,11 +229,11 @@ public class DataCompanyController implements Initializable {
         } else {
         }
     }
-    
+
     @FXML
     void table() {
         DAL dal = new DAL();
-        
+
         tcName.setCellValueFactory(new PropertyValueFactory("name"));
         tcLastname.setCellValueFactory(new PropertyValueFactory("lastName"));
         tcCompany.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<LegalPerson, String>, ObservableValue<String>>() {
@@ -273,11 +274,11 @@ public class DataCompanyController implements Initializable {
                 return new SimpleObjectProperty<>(param.getValue().getCompany().getCnpj());
             }
         });
-        
+
         company_oblist = FXCollections.observableArrayList(dal.getList("LegalPerson"));
         tvCompany.setItems(company_oblist);
     }
-    
+
     @FXML
     void inscomp() {
         MInsertCompany ic = new MInsertCompany();
@@ -287,7 +288,7 @@ public class DataCompanyController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     void editcomp() {
         MEditCompany ec = new MEditCompany();
@@ -304,7 +305,7 @@ public class DataCompanyController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     void back() {
         MMain main = new MMain();
@@ -315,12 +316,12 @@ public class DataCompanyController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     void close() {
         MDataCompany.getStage().close();
     }
-    
+
     void init() {
         tvCompany.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
@@ -335,28 +336,28 @@ public class DataCompanyController implements Initializable {
                     imageFace.setImage(new Image(path));
                     imageCover.setImage(new Image(path));
                 }
-                
+
             }
         }
         );
     }
-    
+
     @FXML
     public void search() {
         ObservableList<LegalPerson> lp = FXCollections.observableArrayList();
-        
+
         for (LegalPerson legal : company_oblist) {
             if (legal.getName().contains(tfSearch.getText())) {
                 lp.add(legal);
             }
         }
-        tvCompany.setItems(lp);       
+        tvCompany.setItems(lp);
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         init();
         table();
     }
-    
+
 }

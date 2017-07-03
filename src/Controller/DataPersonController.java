@@ -212,6 +212,7 @@ public class DataPersonController implements Initializable {
 
             if (bt.get() == ButtonType.OK) {
                 try {
+                    dal.delete(selected.getDeveloper().getIdeadeve());
                     dal.delete(selected.getDeveloper());
                     dal.delete(selected);
                     dal.delete(selected.getPhone());

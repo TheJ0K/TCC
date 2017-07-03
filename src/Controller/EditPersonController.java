@@ -114,7 +114,7 @@ public class EditPersonController implements Initializable {
             dev.setAge(Long.valueOf(tfAge.getText()));
             dev.setCpf(Long.valueOf(tfCpf.getText()));
             dev.setPhysicalPerson(physical);
-            dev.setIdDeveloper(DataPersonController.selected.getDeveloper().getIdDeveloper());
+            dev.setIddeveloper(DataPersonController.selected.getDeveloper().getIddeveloper());
 
             dal.update(dev);
             dal.update(physical);

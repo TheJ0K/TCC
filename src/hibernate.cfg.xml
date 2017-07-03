@@ -25,5 +25,7 @@
     <mapping class="Model.City"/>
     <mapping class="Model.Developer"/>
     <mapping class="Model.PhysicalPerson"/>
+    <mapping class="Model.IdeaCompany"/>
+    <mapping class="Model.IdeaDeveloper"/>
   </session-factory>
 </hibernate-configuration>

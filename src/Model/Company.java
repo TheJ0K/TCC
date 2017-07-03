@@ -6,6 +6,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -27,6 +28,10 @@ public class Company implements Serializable {
     @JoinColumn(name = "idlegal")
     private LegalPerson legalPerson;
 
+    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY,
+            targetEntity = IdeaCompany.class, cascade = CascadeType.ALL)
+    private List<IdeaCompany> ideacomp;
+
     public Company() {
     }
 
@@ -36,6 +41,14 @@ public class Company implements Serializable {
 
     public void setLegalPerson(LegalPerson legalPerson) {
         this.legalPerson = legalPerson;
+    }
+
+    public List<IdeaCompany> getIdeaCompany() {
+        return ideacomp;
+    }
+
+    public void setIdeaCompany(List<IdeaCompany> ideaCompany) {
+        this.ideacomp = ideaCompany;
     }
 
     public String getNameCompany() {
